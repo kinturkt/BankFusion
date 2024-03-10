@@ -1,0 +1,62 @@
+Akshat Shah- 1002156388
+
+Kintur Shah-1002178072
+
+mysql> SELECT
+    ->     B.Name,
+    ->     B.City,
+    ->     C.C_SSN,
+    ->     C.F_name,
+    ->     C.Mid_ini,
+    ->     C.L_name,
+    ->     I.Account_num,
+    ->     BI.Account_num,
+    ->     A.Balance,
+    ->     L.Loan_Amount
+    -> FROM
+    ->     Branch B
+    -> LEFT JOIN
+    ->     Customers C ON B.Bank_Id = C.Bank_ID
+    -> LEFT JOIN
+    ->     Individuals I ON I.C_SSN = C.C_SSN
+    -> LEFT JOIN
+    ->     Business BI ON BI.C_SSN = C.C_SSN
+    -> LEFT JOIN 
+    ->     ACCOUNT A ON I.Account_num=A.Account_num OR BI.Account_num=A.Account_num
+    -> LEFT JOIN
+    ->     LOAN L ON C.C_SSN=L.C_SSN;
++-------------------------------------+---------------+--------------+-----------+---------+----------+-------------+-------------+---------+-------------+
+| Name                                | City          | C_SSN        | F_name    | Mid_ini | L_name   | Account_num | Account_num | Balance | Loan_Amount |
++-------------------------------------+---------------+--------------+-----------+---------+----------+-------------+-------------+---------+-------------+
+| Amsterdam Downtown Branch           | Amsterdam     | 505-05-0504  | Carter    | L       | Wright   | NULL        | BUS300012   |   30000 |       10000 |
+| Business District Branch            | Hong Kong     | 888-88-8887  | Alexander | F       | Martinez | CHK200011   | NULL        |    7000 |       15000 |
+| Central London Branch               | London        | 777-77-7776  | Evelyn    | J       | Wilson   | SAV100010   | NULL        |   10000 |       20000 |
+| City Center Branch                  | Chicago       | 444-44-4443  | James     | M       | Miller   | CHK200005   | NULL        |    6000 |       12000 |
+| Downtown LA Branch                  | Los Angeles   | 030-30-3033  | Adriana   | D       | Shah     | NULL        | BUS300021   |  500000 |        NULL |
+| Downtown LA Branch                  | Los Angeles   | 040-40-4044  | Akshat    | S       | Shah     | SAV100022   | NULL        |    1000 |        NULL |
+| Downtown LA Branch                  | Los Angeles   | 141-14-141   | Drashti   | A       | Shah     | NULL        | NULL        |    NULL |        NULL |
+| Downtown LA Branch                  | Los Angeles   | 222-22-2221  | William   | D       | Williams | CHK200002   | NULL        |    8000 |       18000 |
+| Downtown LA Branch                  | Los Angeles   | 2828-28-2828 | as        | a       | ass      | NULL        | NULL        |    NULL |        NULL |
+| Financial District Branch           | San Francisco | 141-41-141   | Karan     | S       | Shah     | NULL        | NULL        |    NULL |        NULL |
+| Financial District Branch           | San Francisco | 333-33-3332  | Abigail   | L       | Brown    | SAV100004   | NULL        |    3000 |       25000 |
+| Frankfurt City Branch               | Frankfurt     | 202-02-0201  | Harper    | R       | Clark    | NULL        | BUS300003   |   15000 |       30000 |
+| Harbor Branch                       | Boston        | 666-66-6665  | Benjamin  | K       | Garcia   | CHK200008   | NULL        |    4000 |       22000 |
+| Main Branch                         | New York      | 111-11-1110  | Emma      | R       | Johnson  | SAV100001   | NULL        |    5000 |       28000 |
+| Melbourne Harbor Branch             | Melbourne     | 010-10-1011  | Avery     | Y       | White    | NULL        | NULL        |    NULL |        NULL |
+| Montreal Downtown Branch            | Montreal      | 808-08-0807  | Madison   | W       | Carter   | NULL        | NULL        |    NULL |        NULL |
+| Perth Central Branch                | Perth         | 020-20-2022  | Chloe     | Z       | Allen    | NULL        | NULL        |    NULL |        NULL |
+| Plaza Madrid Branch                 | Madrid        | 404-04-0403  | Elena     | S       | Scott    | NULL        | BUS300009   |   25000 |       32000 |
+| Riviera Paris Branch                | Paris         | 303-03-0302  | Michael   | P       | Hall     | NULL        | BUS300006   |   20000 |       17000 |
+| Sydney City Center Branch           | Sydney        | 909-09-0908  | Joshua    | X       | Lee      | NULL        | NULL        |    NULL |        NULL |
+| Tokyo Financial Branch              | Tokyo         | 999-99-9998  | Charlotte | H       | Lee      | SAV100013   | NULL        |    4000 |       21000 |
+| Uptown Branch                       | Houston       | 555-55-5554  | Mia       | N       | Davis    | SAV100007   | NULL        |    7000 |       26000 |
+| Vancouver Financial District Branch | Vancouver     | 707-07-0706  | Andrew    | V       | Baker    | NULL        | BUS300018   |   40000 |       19000 |
+| Waterfront Toronto Branch           | Toronto       | 606-06-0605  | Samantha  | T       | Lee      | NULL        | BUS300015   |   35000 |       23000 |
+| Zurich Financial Center Branch      | Zurich        | 101-01-0100  | Jacob     | E       | Lopez    | CHK200014   | NULL        |    9000 |       29000 |
+| Zurich Financial Center Branch      | Zurich        | 2525-25-252  | Amosh     | L       | Sapkota  | SAV300025   | NULL        |    4000 |        NULL |
++-------------------------------------+---------------+--------------+-----------+---------+----------+-------------+-------------+---------+-------------+
+26 rows in set (0.01 sec)
+
+mysql> 
+mysql> 
+mysql> notee

@@ -1,0 +1,12 @@
+Akshat Shah- 1002156388
+
+Kintur Shah- 1002178072
+
+mysql> DELIMITER // CREATE TRIGGER interest_rate_notification AFTER UPDATE ON ACCOUNT FOR EACH ROW BEGIN DECLARE new_balance DECIMAL(10, 2); DECLARE threshold_balance DECIMAL(10, 2); SET threshold_balance = 1000.00; SET new_balance = NEW.Balance; IF new_balance <threshold_balance THEN SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Interest rate NOTIFIER: Your balance is below $1000. So this trigger is fired'; END IF; END; //
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> DELIMITER ; update account set balance = 900 where account_num = 'SAV100001';
+ERROR 1644 (45000): Interest rate NOTIFIER: Your balance is below $1000. So this trigger is fired.
+mysql> 
+mysql> notee
+

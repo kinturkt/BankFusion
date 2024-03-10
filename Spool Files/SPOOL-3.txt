@@ -1,0 +1,17 @@
+Akshat Shah- 1002156388
+
+Kintur Shah-1002178072
+
+mysql> SELECT     E.E_SSN AS Personal_Banker_SSN,     E.E_Name AS Personal_Banker_Name,     SUM(A.Balance) AS Total_Customer_Balance FROM     Individuals I JOIN     ACCOUNT A ON A.Account_num = I.Account_Num JOIN     LOAN L ON L.C_SSN = I.C_SSN JOIN     PERSONAL_BANKER PB ON PB.Loan_Num = L.Loan_Num JOIN     Employees E ON E.E_SSN = PB.E_SSN GROUP BY     E.E_SSN, E.E_Name ORDER BY     Total_Customer_Balance DESC LIMIT 5;
++---------------------+----------------------+------------------------+
+| Personal_Banker_SSN | Personal_Banker_Name | Total_Customer_Balance |
++---------------------+----------------------+------------------------+
+| 333-33-3333         | Charlie Davis        |                  10000 |
+| 707-07-0707         | Peter Allen          |                   9000 |
+| 555-55-5555         | Eva Brown            |                   8000 |
+| 222-22-2222         | Bob Smith            |                   7000 |
+| 404-04-0404         | Mia Hall             |                   7000 |
++---------------------+----------------------+------------------------+
+5 rows in set (0.01 sec)
+
+mysql> notee
