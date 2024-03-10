@@ -1,0 +1,24 @@
+1. CREATE TABLE BANK(Bank_Id int, B_Name varchar(50), PRIMARY KEY (Bank_Id));
+
+2. CREATE TABLE BRANCH(Name varchar(50), City varchar(50), Bank_Id int, PRIMARY KEY (Name), FOREIGN KEY (Bank_Id) REFERENCES BANK(Bank_Id));
+
+3. CREATE TABLE LOAN(Branch_name varchar(50), Loan_Amount float, Loan_Num int, Loan_Type varchar(30), C_SSN varchar(50),PRIMARY KEY (Loan_Num), FOREIGN KEY (Branch_name) REFERENCES BRANCH(Name), FOREIGN KEY (C_SSN) REFERENCES CUSTOMERS (C_SSN));
+
+4. CREATE TABLE LOAN_PAYMENT(Loan_Num int, Amount float, Payment_Num int, Date DateTIme, PRIMARY KEY (Payment_Num), FOREIGN KEY (Loan_Num) REFERENCES Loan(Loan_Num));
+
+5. CREATE TABLE MANAGER(Manager_SSN varchar(50), Manager_Name varchar(50), PRIMARY KEY (Manager_SSN));
+
+6. CREATE TABLE EMPLOYEES(E_SSN VARCHAR(50), Address varchar(60), Mob_Num int(10), Bank_Id int, E_Name varchar(50), start_date DateTime, Manager_SSN varchar(50), PRIMARY KEY (E_SSN), FOREIGN KEY (Bank_Id) REFERENCES BANK(Bank_Id), 
+FOREIGN KEY (Manager_SSN) REFERENCES MANAGER(Manager_SSN));
+  
+7. CREATE TABLE DEPENDENT(Dependent_ID int, E_SSN varchar(50), PRIMARY KEY (Dependent_ID), FOREIGN KEY (E_SSN) REFERENCES EMPLOYEES(E_SSN));
+  
+8. CREATE TABLE PERSONAL_BANKER(Loan_Num int, E_SSN varchar(50), Customer_ID int, FOREIGN KEY (Loan_Num) REFERENCES LOAN(Loan_Num), FOREIGN KEY (E_SSN) REFERENCES EMPLOYEES(E_SSN)); 
+  
+9. CREATE TABLE CUSTOMERS(Bank_ID int, C_SSN varchar(50),F_name varchar(50),Mid_Ini varchar(1), L_Name varchar(20), C_Address varchar(60), PRIMARY KEY (C_SSN), FOREIGN KEY (Bank_ID) REFERENCES BANK(Bank_Id)); 
+  
+10. CREATE TABLE ACCOUNT(Account_num varchar(20), Balance float, Last_Access_Date datetime, Acoount_Type varchar(10), OverDraft float, Intrest_Rate float, PRIMARY KEY (Account_num));
+
+11. CREATE TABLE INDIVIDUALS(C_SSN varchar(50), SavingsFlag varchar(10), Intrest_Rate float, CheckingFlag varchar(10),OverDraft float, Account_num varchar(20),I_SSN varchar(50), PRIMARY KEY (I_SSN), FOREIGN KEY (C_SSN) REFERENCES Customers(C_SSN), FOREIGN KEY (Account_num) REFERENCES ACCOUNT(Account_num)); 
+	
+12. CREATE TABLE BUSINESS(C_SSN varchar(50), Business_Name varchar(30), Address varchar(60), Account_num varchar(20), PRIMARY KEY (Business_Name,Address), FOREIGN KEY (C_SSN) REFERENCES CUSTOMERS(C_SSN), FOREIGN KEY (Account_num) REFERENCES ACCOUNT(Account_num));
