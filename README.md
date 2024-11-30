@@ -24,3 +24,8 @@ Use the intuitive CLI menu to: <br>
 
 3) **Exit the System:** 
 Use the menu option to safely exit the application.
+
+## Author
+**Kintur Shah**
+[GitHub]([url](https://github.com/kinturkt))
+[LinkedIn]([url](https://www.linkedin.com/in/kintur-shah-a81134210/))
