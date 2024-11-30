@@ -9,3 +9,19 @@ The Banking System is a Python-based command-line application integrated with an
 <b> Transaction Logs: </b> Maintain a detailed record of all operations for auditing. <br>
 <b> Database Integration: </b> Stores account and transaction data securely using SQL. <br>
 <b> Command-Line Interface: </b> Provides a lightweight and user-friendly interface for operations.
+
+## Usage
+1) **Start the Application:** <br>
+Launch the system by running python main.py.  <br>
+
+2) **Command-Line Operations:**
+
+Use the intuitive CLI menu to:
+**Create Accounts:** Add new user accounts to the database. <br>
+**Manage Loans:** Apply for loans, track amounts, and handle repayments. <br>
+**Transfer Funds:** Securely transfer money between accounts. <br>
+**Process Repayments:** Handle loan repayments and update records. <br>
+**View Logs:** Access detailed transaction logs.<br> 
+
+3) **Exit the System:** 
+Use the menu option to safely exit the application.
