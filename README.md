@@ -1,5 +1,5 @@
 ## Description:
-The Banking System is a Python-based command-line application integrated with an SQL database to simulate core banking operations. It provides a simple and secure solution for managing accounts, handling loans, and processing transactions. Designed with a focus on usability, the CLI-based system is efficient for real-time operations. In this project, we created a  CLI (Command Line Interface) using Python language where a user can create his individual / business account from 20 different banks. <br>
+These is a Banking System Project which is a Python-based command-line application integrated with an SQL database to simulate core banking operations. It provides a simple and secure solution for managing accounts, handling loans, and processing transactions. Designed with a focus on usability, the CLI-based system is efficient for real-time operations. In this project, we created a  CLI (Command Line Interface) using Python language where a user can create his individual / business account from 20 different banks. <br>
 
 ## Features:
 <b> Account Creation: </b> Easily create new user accounts with necessary details. <br>
